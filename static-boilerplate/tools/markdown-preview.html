@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Preview — MicroSaaS</title>
+    <meta name="description" content="Write Markdown and preview the rendered HTML in real time. Copy the HTML output instantly." />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('msb-theme');
+          var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          container: { center: true, padding: '1.5rem', screens: { '2xl': '1280px' } },
+          extend: {
+            colors: {
+              background: 'var(--bg)', foreground: 'var(--fg)', card: 'var(--card)',
+              'card-foreground': 'var(--card-fg)', border: 'var(--border)', input: 'var(--border)',
+              muted: 'var(--muted)', 'muted-foreground': 'var(--muted-fg)',
+              primary: 'var(--primary)', 'primary-foreground': 'var(--primary-fg)', accent: 'var(--accent)',
+            },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@13.0.3/marked.min.js"></script>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="site-header">
+      <div class="container flex h-16 items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-2 font-bold">
+          <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+          </span>
+          <span class="text-lg" data-i18n="common.appName">MicroSaaS</span>
+        </a>
+        <nav class="hidden items-center gap-1 md:flex">
+          <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
+          <a href="../index.html#tools" class="nav-link is-active" data-i18n="nav.tools">Tools</a>
+          <a href="../pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        </nav>
+        <div class="flex items-center gap-1">
+          <div class="relative">
+            <button class="btn btn-ghost btn-icon" data-menu-toggle="#langMenu" data-i18n-aria="language.label" aria-label="Change language">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </button>
+            <div id="langMenu" class="menu hidden" data-menu>
+              <button class="menu-item" data-set-lang="en">English</button>
+              <button class="menu-item" data-set-lang="zh">中文</button>
+              <button class="menu-item" data-set-lang="es">Español</button>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-icon" data-theme-toggle data-i18n-aria="theme.label" aria-label="Toggle theme">
+            <svg data-theme-icon="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg data-theme-icon="moon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+          <a href="../login.html" class="btn btn-ghost hidden md:inline-flex" data-i18n="nav.login">Login</a>
+          <a href="../login.html" class="btn btn-primary hidden md:inline-flex" data-i18n="nav.signup">Get started</a>
+          <button class="btn btn-ghost btn-icon md:hidden" data-mobile-toggle="#mobileNav" aria-label="Open menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileNav" class="hidden border-t border-border md:hidden">
+        <nav class="container flex flex-col gap-1 py-4">
+          <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
+          <a href="../index.html#tools" class="nav-link" data-i18n="nav.tools">Tools</a>
+          <a href="../pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1 container py-10 lg:py-14">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="text-3xl font-bold tracking-tight sm:text-4xl" data-i18n="tools.markdownPreview.title"></h1>
+        <p class="mt-3 text-muted-foreground" data-i18n="tools.markdownPreview.description"></p>
+      </div>
+
+      <div class="mt-10 grid gap-6 lg:grid-cols-2">
+        <!-- Input -->
+        <section class="card flex flex-col p-5">
+          <div class="mb-3 flex items-center justify-between">
+            <span class="text-sm font-medium" data-i18n="tools.markdownPreview.inputLabel"></span>
+            <button id="clearBtn" class="btn btn-ghost" style="padding: 0.35rem 0.6rem" data-i18n="tools.markdownPreview.clear"></button>
+          </div>
+          <textarea id="mdInput" spellcheck="false" class="field min-h-[24rem] flex-1" style="font-family: ui-monospace, monospace"></textarea>
+        </section>
+
+        <!-- Preview -->
+        <section class="card flex flex-col p-5">
+          <div class="mb-3 flex items-center justify-between">
+            <span class="text-sm font-medium" data-i18n="tools.markdownPreview.previewLabel"></span>
+            <button id="copyBtn" class="btn btn-outline" style="padding: 0.35rem 0.6rem" data-i18n="tools.markdownPreview.copyHtml"></button>
+          </div>
+          <div id="preview" class="prose min-h-[24rem] flex-1 overflow-auto rounded-lg border border-border p-4" style="background: var(--bg)"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="border-t border-border bg-muted">
+      <div class="container py-10 text-center text-sm text-muted-foreground">
+        <p>&copy; <span id="year"></span> MicroSaaS. <span data-i18n="footer.rights"></span></p>
+      </div>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      (function () {
+        var input = document.getElementById('mdInput');
+        var preview = document.getElementById('preview');
+        var copyBtn = document.getElementById('copyBtn');
+        var clearBtn = document.getElementById('clearBtn');
+
+        var DEFAULT_MD = [
+          '# Hello world',
+          '',
+          'Welcome to the **Markdown Preview** tool.',
+          '',
+          '## Features',
+          '',
+          '- Live preview as you type',
+          '- GitHub flavored markdown',
+          '- One-click **Copy HTML**',
+          '',
+          '> Blockquotes look great too.',
+          '',
+          '```js',
+          'function greet(name) {',
+          '  return `Hello, ${name}!`;',
+          '}',
+          '```',
+          '',
+          '| Tool | Status |',
+          '| ---- | ------ |',
+          '| Image Compressor | Ready |',
+          '| Color Converter  | Ready |'
+        ].join('\n');
+
+        function render() {
+          preview.innerHTML = window.marked ? window.marked.parse(input.value) : '';
+        }
+        var debouncedRender = Utils.debounce(render, 200);
+
+        input.value = DEFAULT_MD;
+        render();
+
+        input.addEventListener('input', debouncedRender);
+
+        copyBtn.addEventListener('click', function () {
+          var label = window.I18n.t('tools.markdownPreview.copyHtml');
+          Utils.copyToClipboard(preview.innerHTML).then(function (ok) {
+            if (ok) Utils.flashCopied(copyBtn, window.I18n.t('common.copied'), label);
+          });
+        });
+
+        clearBtn.addEventListener('click', function () {
+          input.value = '';
+          render();
+          input.focus();
+        });
+      })();
+    </script>
+  </body>
+</html>

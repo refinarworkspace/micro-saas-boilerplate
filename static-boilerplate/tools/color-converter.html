@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Converter — MicroSaaS</title>
+    <meta name="description" content="Convert colors between HEX, RGB and HSL formats in real time with live preview." />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('msb-theme');
+          var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          container: { center: true, padding: '1.5rem', screens: { '2xl': '1280px' } },
+          extend: {
+            colors: {
+              background: 'var(--bg)', foreground: 'var(--fg)', card: 'var(--card)',
+              'card-foreground': 'var(--card-fg)', border: 'var(--border)', input: 'var(--border)',
+              muted: 'var(--muted)', 'muted-foreground': 'var(--muted-fg)',
+              primary: 'var(--primary)', 'primary-foreground': 'var(--primary-fg)', accent: 'var(--accent)',
+            },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="site-header">
+      <div class="container flex h-16 items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-2 font-bold">
+          <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+          </span>
+          <span class="text-lg" data-i18n="common.appName">MicroSaaS</span>
+        </a>
+        <nav class="hidden items-center gap-1 md:flex">
+          <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
+          <a href="../index.html#tools" class="nav-link is-active" data-i18n="nav.tools">Tools</a>
+          <a href="../pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        </nav>
+        <div class="flex items-center gap-1">
+          <div class="relative">
+            <button class="btn btn-ghost btn-icon" data-menu-toggle="#langMenu" data-i18n-aria="language.label" aria-label="Change language">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </button>
+            <div id="langMenu" class="menu hidden" data-menu>
+              <button class="menu-item" data-set-lang="en">English</button>
+              <button class="menu-item" data-set-lang="zh">中文</button>
+              <button class="menu-item" data-set-lang="es">Español</button>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-icon" data-theme-toggle data-i18n-aria="theme.label" aria-label="Toggle theme">
+            <svg data-theme-icon="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg data-theme-icon="moon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+          <a href="../login.html" class="btn btn-ghost hidden md:inline-flex" data-i18n="nav.login">Login</a>
+          <a href="../login.html" class="btn btn-primary hidden md:inline-flex" data-i18n="nav.signup">Get started</a>
+          <button class="btn btn-ghost btn-icon md:hidden" data-mobile-toggle="#mobileNav" aria-label="Open menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileNav" class="hidden border-t border-border md:hidden">
+        <nav class="container flex flex-col gap-1 py-4">
+          <a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a>
+          <a href="../index.html#tools" class="nav-link" data-i18n="nav.tools">Tools</a>
+          <a href="../pricing.html" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1 container py-10 lg:py-14">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="text-3xl font-bold tracking-tight sm:text-4xl" data-i18n="tools.colorConverter.title"></h1>
+        <p class="mt-3 text-muted-foreground" data-i18n="tools.colorConverter.description"></p>
+      </div>
+
+      <div class="mt-10 grid gap-6 lg:grid-cols-2">
+        <!-- Config -->
+        <section class="card space-y-5 p-5">
+          <div class="flex items-center gap-3">
+            <label for="picker" class="text-sm font-medium" data-i18n="tools.colorConverter.pick"></label>
+            <input id="picker" type="color" value="#6366F1" class="h-10 w-16 cursor-pointer rounded-md border border-border" style="padding: 2px; background: var(--bg)" />
+          </div>
+
+          <div class="space-y-1.5">
+            <label for="hex" class="text-sm font-medium" data-i18n="tools.colorConverter.hex"></label>
+            <div class="flex gap-2">
+              <input id="hex" class="field" style="font-family: ui-monospace, monospace" />
+              <button class="btn btn-outline btn-icon" data-copy="hex" data-i18n-aria="common.copy" aria-label="Copy">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              </button>
+            </div>
+            <p id="hexError" class="hidden text-xs" style="color: #ef4444" data-i18n="tools.colorConverter.invalid"></p>
+          </div>
+
+          <div class="space-y-1.5">
+            <label for="rgb" class="text-sm font-medium" data-i18n="tools.colorConverter.rgb"></label>
+            <div class="flex gap-2">
+              <input id="rgb" class="field" style="font-family: ui-monospace, monospace" />
+              <button class="btn btn-outline btn-icon" data-copy="rgb" data-i18n-aria="common.copy" aria-label="Copy">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              </button>
+            </div>
+            <p id="rgbError" class="hidden text-xs" style="color: #ef4444" data-i18n="tools.colorConverter.invalid"></p>
+          </div>
+
+          <div class="space-y-1.5">
+            <label for="hsl" class="text-sm font-medium" data-i18n="tools.colorConverter.hsl"></label>
+            <div class="flex gap-2">
+              <input id="hsl" class="field" style="font-family: ui-monospace, monospace" />
+              <button class="btn btn-outline btn-icon" data-copy="hsl" data-i18n-aria="common.copy" aria-label="Copy">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              </button>
+            </div>
+            <p id="hslError" class="hidden text-xs" style="color: #ef4444" data-i18n="tools.colorConverter.invalid"></p>
+          </div>
+        </section>
+
+        <!-- Result -->
+        <section class="card flex flex-col gap-4 p-5">
+          <span class="text-sm font-medium" data-i18n="tools.colorConverter.preview"></span>
+          <div id="swatch" class="flex flex-1 items-end rounded-xl border border-border p-4" style="min-height: 12rem">
+            <span id="swatchLabel" class="rounded-md px-2 py-1 font-mono text-sm text-white" style="background: rgba(0,0,0,0.4)"></span>
+          </div>
+          <div class="grid grid-cols-3 gap-3 text-center text-xs">
+            <div class="rounded-lg border border-border p-2"><p class="uppercase text-muted-foreground">HEX</p><p id="outHex" class="mt-1 font-mono"></p></div>
+            <div class="rounded-lg border border-border p-2"><p class="uppercase text-muted-foreground">RGB</p><p id="outRgb" class="mt-1 font-mono"></p></div>
+            <div class="rounded-lg border border-border p-2"><p class="uppercase text-muted-foreground">HSL</p><p id="outHsl" class="mt-1 font-mono"></p></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="border-t border-border bg-muted">
+      <div class="container py-10 text-center text-sm text-muted-foreground">
+        <p>&copy; <span id="year"></span> MicroSaaS. <span data-i18n="footer.rights"></span></p>
+      </div>
+    </footer>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/theme.js"></script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      (function () {
+        function clampByte(n) { return Math.max(0, Math.min(255, Math.round(n))); }
+        function hexToRgb(hex) {
+          var c = hex.trim().replace(/^#/, '');
+          if (c.length === 3) c = c.split('').map(function (x) { return x + x; }).join('');
+          if (!/^[0-9a-fA-F]{6}$/.test(c)) return null;
+          return { r: parseInt(c.slice(0, 2), 16), g: parseInt(c.slice(2, 4), 16), b: parseInt(c.slice(4, 6), 16) };
+        }
+        function rgbToHex(o) {
+          function h(n) { return clampByte(n).toString(16).padStart(2, '0'); }
+          return ('#' + h(o.r) + h(o.g) + h(o.b)).toUpperCase();
+        }
+        function rgbToHsl(o) {
+          var r = o.r / 255, g = o.g / 255, b = o.b / 255;
+          var max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min, h = 0;
+          if (d !== 0) {
+            if (max === r) h = ((g - b) / d) % 6;
+            else if (max === g) h = (b - r) / d + 2;
+            else h = (r - g) / d + 4;
+            h *= 60; if (h < 0) h += 360;
+          }
+          var l = (max + min) / 2;
+          var s = d === 0 ? 0 : d / (1 - Math.abs(2 * l - 1));
+          return { h: Math.round(h), s: Math.round(s * 100), l: Math.round(l * 100) };
+        }
+        function hslToRgb(o) {
+          var s = o.s / 100, l = o.l / 100;
+          var c = (1 - Math.abs(2 * l - 1)) * s;
+          var x = c * (1 - Math.abs(((o.h / 60) % 2) - 1));
+          var m = l - c / 2, r = 0, g = 0, b = 0;
+          if (o.h < 60) { r = c; g = x; }
+          else if (o.h < 120) { r = x; g = c; }
+          else if (o.h < 180) { g = c; b = x; }
+          else if (o.h < 240) { g = x; b = c; }
+          else if (o.h < 300) { r = x; b = c; }
+          else { r = c; b = x; }
+          return { r: clampByte((r + m) * 255), g: clampByte((g + m) * 255), b: clampByte((b + m) * 255) };
+        }
+        function parseRgb(str) {
+          var n = str.match(/\d+(\.\d+)?/g);
+          if (!n || n.length < 3) return null;
+          var v = n.slice(0, 3).map(Number);
+          if (v.some(function (x) { return x < 0 || x > 255; })) return null;
+          return { r: v[0], g: v[1], b: v[2] };
+        }
+        function parseHsl(str) {
+          var n = str.match(/\d+(\.\d+)?/g);
+          if (!n || n.length < 3) return null;
+          var v = n.slice(0, 3).map(Number);
+          if (v[0] < 0 || v[0] > 360 || v[1] < 0 || v[1] > 100 || v[2] < 0 || v[2] > 100) return null;
+          return { h: v[0], s: v[1], l: v[2] };
+        }
+        function fmtRgb(o) { return o.r + ', ' + o.g + ', ' + o.b; }
+        function fmtHsl(o) { return o.h + ', ' + o.s + '%, ' + o.l + '%'; }
+
+        var hexEl = document.getElementById('hex');
+        var rgbEl = document.getElementById('rgb');
+        var hslEl = document.getElementById('hsl');
+        var picker = document.getElementById('picker');
+        var swatch = document.getElementById('swatch');
+        var swatchLabel = document.getElementById('swatchLabel');
+        var outHex = document.getElementById('outHex');
+        var outRgb = document.getElementById('outRgb');
+        var outHsl = document.getElementById('outHsl');
+
+        function setError(id, on) {
+          var el = document.getElementById(id + 'Error');
+          var input = document.getElementById(id);
+          if (el) el.classList.toggle('hidden', !on);
+          if (input) input.classList.toggle('field-invalid', on);
+        }
+
+        function sync(source, rgb) {
+          var hex = rgbToHex(rgb);
+          var hsl = rgbToHsl(rgb);
+          if (source !== 'hex') hexEl.value = hex;
+          if (source !== 'rgb') rgbEl.value = fmtRgb(rgb);
+          if (source !== 'hsl') hslEl.value = fmtHsl(hsl);
+          picker.value = hex;
+          swatch.style.backgroundColor = hex;
+          swatchLabel.textContent = hex;
+          outHex.textContent = hex;
+          outRgb.textContent = fmtRgb(rgb);
+          outHsl.textContent = fmtHsl(hsl);
+        }
+
+        hexEl.addEventListener('input', function () {
+          var rgb = hexToRgb(hexEl.value);
+          setError('hex', !rgb);
+          if (rgb) sync('hex', rgb);
+        });
+        rgbEl.addEventListener('input', function () {
+          var rgb = parseRgb(rgbEl.value);
+          setError('rgb', !rgb);
+          if (rgb) sync('rgb', rgb);
+        });
+        hslEl.addEventListener('input', function () {
+          var hsl = parseHsl(hslEl.value);
+          setError('hsl', !hsl);
+          if (hsl) sync('hsl', hslToRgb(hsl));
+        });
+        picker.addEventListener('input', function () {
+          var rgb = hexToRgb(picker.value);
+          if (rgb) {
+            setError('hex', false); setError('rgb', false); setError('hsl', false);
+            hexEl.value = rgbToHex(rgb);
+            sync('hex', rgb);
+          }
+        });
+
+        document.querySelectorAll('[data-copy]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var key = btn.getAttribute('data-copy');
+            var text =
+              key === 'hex' ? hexEl.value :
+              key === 'rgb' ? 'rgb(' + rgbEl.value + ')' :
+              'hsl(' + hslEl.value + ')';
+            Utils.copyToClipboard(text).then(function (ok) {
+              if (ok) {
+                btn.classList.add('is-copied');
+                setTimeout(function () { btn.classList.remove('is-copied'); }, 1200);
+              }
+            });
+          });
+        });
+
+        // Initialize with indigo-500.
+        sync('init', { r: 99, g: 102, b: 241 });
+      })();
+    </script>
+  </body>
+</html>

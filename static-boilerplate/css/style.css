@@ -1,0 +1,375 @@
+/* =============================================================================
+ * style.css — theme variables + custom components for the static template.
+ * Tailwind (via CDN) handles utilities; this file owns the design tokens
+ * (light/dark via CSS custom properties) and a few reusable component classes.
+ * The Tailwind config in each page maps color names to these variables, so
+ * utilities like `bg-primary` / `text-muted-foreground` react to the theme.
+ * ========================================================================== */
+
+:root {
+  --bg: #ffffff;
+  --fg: #0f172a;
+  --card: #ffffff;
+  --card-fg: #0f172a;
+  --border: #e2e8f0;
+  --muted: #f1f5f9;
+  --muted-fg: #64748b;
+  --primary: #4f46e5;
+  --primary-fg: #ffffff;
+  --accent: #eef2ff;
+}
+
+.dark {
+  --bg: #0b1120;
+  --fg: #e2e8f0;
+  --card: #111a2e;
+  --card-fg: #e2e8f0;
+  --border: #1e293b;
+  --muted: #1e293b;
+  --muted-fg: #94a3b8;
+  --primary: #6366f1;
+  --primary-fg: #0b1120;
+  --accent: #1e293b;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ----- Helpers ----------------------------------------------------------- */
+.gradient-text {
+  background-image: linear-gradient(90deg, var(--primary), #a855f7, #d946ef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-primary-soft {
+  background-color: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: var(--primary);
+}
+
+.bg-grid {
+  background-image: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--border) 60%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--border) 60%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px;
+}
+
+.mask-fade {
+  -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, black, transparent 75%);
+}
+
+/* ----- Buttons ----------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.625rem 1rem;
+  line-height: 1;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.btn-lg {
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+}
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-fg);
+}
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--border);
+  color: var(--fg);
+}
+.btn-outline:hover {
+  background-color: var(--accent);
+}
+.btn-ghost {
+  background-color: transparent;
+  color: var(--fg);
+}
+.btn-ghost:hover {
+  background-color: var(--accent);
+}
+.btn-icon {
+  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* ----- Cards ------------------------------------------------------------- */
+.card {
+  background-color: var(--card);
+  color: var(--card-fg);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+/* ----- Form fields ------------------------------------------------------- */
+.field {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  background-color: var(--bg);
+  color: var(--fg);
+  font-size: 0.875rem;
+}
+.field:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+textarea.field {
+  height: auto;
+  padding: 0.75rem;
+  resize: none;
+  line-height: 1.5;
+}
+.field-invalid {
+  border-color: #ef4444;
+}
+
+/* ----- Header / nav ------------------------------------------------------ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-link {
+  color: var(--muted-fg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--fg);
+}
+
+/* ----- Dropdowns (theme + language) ------------------------------------- */
+.menu {
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  min-width: 10rem;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.18);
+  padding: 0.25rem;
+  z-index: 50;
+}
+.menu-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 0.875rem;
+  color: var(--fg);
+  cursor: pointer;
+  text-align: left;
+}
+.menu-item:hover {
+  background-color: var(--accent);
+}
+.menu-item.is-active {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* ----- FAQ accordion ----------------------------------------------------- */
+.faq-item + .faq-item {
+  border-top: 1px solid var(--border);
+}
+.faq-q {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: transparent;
+  border: 0;
+  padding: 1rem 1.25rem;
+  font-weight: 500;
+  color: var(--fg);
+  cursor: pointer;
+  text-align: left;
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.25rem;
+  color: var(--muted-fg);
+  font-size: 0.9rem;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-item.open .faq-a {
+  max-height: 320px;
+  padding-bottom: 1.25rem;
+}
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+.faq-chevron {
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+/* ----- Range slider ------------------------------------------------------ */
+input[type='range'] {
+  accent-color: var(--primary);
+}
+
+/* ----- Markdown preview (prose) ----------------------------------------- */
+.prose h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1.25rem 0 0.75rem;
+}
+.prose h1:first-child {
+  margin-top: 0;
+}
+.prose h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.25rem;
+}
+.prose h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+}
+.prose p {
+  margin: 0.75rem 0;
+  line-height: 1.7;
+}
+.prose a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose ul,
+.prose ol {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+.prose ul {
+  list-style: disc;
+}
+.prose ol {
+  list-style: decimal;
+}
+.prose li {
+  margin: 0.25rem 0;
+}
+.prose blockquote {
+  border-left: 4px solid color-mix(in srgb, var(--primary) 40%, transparent);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--muted-fg);
+  font-style: italic;
+}
+.prose code {
+  background-color: var(--muted);
+  border-radius: 0.25rem;
+  padding: 0.1rem 0.35rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+}
+.prose pre {
+  background-color: var(--muted);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+.prose pre code {
+  background: transparent;
+  padding: 0;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+.prose th,
+.prose td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.prose th {
+  background-color: var(--muted);
+}
+.prose img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* ----- Utilities --------------------------------------------------------- */
+.hidden {
+  display: none !important;
+}
+.is-copied {
+  color: var(--primary) !important;
+}
