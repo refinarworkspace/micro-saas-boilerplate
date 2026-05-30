@@ -1,0 +1,44 @@
+{
+  "name": "micro-saas-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A production-ready Next.js 14 micro-SaaS boilerplate with i18n, dark mode, auth & Stripe placeholders, and ready-to-use client tools.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "@supabase/ssr": "^0.5.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.441.0",
+    "next": "14.2.13",
+    "next-intl": "^3.19.4",
+    "next-themes": "^0.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
+    "stripe": "^16.12.0",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.5",
+    "@types/react": "^18.3.7",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.13",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^5.6.2"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

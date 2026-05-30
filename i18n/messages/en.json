@@ -1,0 +1,262 @@
+{
+  "Common": {
+    "appName": "MicroSaaS",
+    "tagline": "Build & launch micro tools in hours.",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "copyHtml": "Copy HTML",
+    "download": "Download",
+    "upload": "Upload",
+    "loading": "Loading…",
+    "getStarted": "Get started",
+    "learnMore": "Learn more",
+    "comingSoon": "Coming soon",
+    "backHome": "Back to home",
+    "notFoundTitle": "Page not found",
+    "notFoundText": "Sorry, we couldn't find the page you're looking for."
+  },
+  "Nav": {
+    "home": "Home",
+    "tools": "Tools",
+    "pricing": "Pricing",
+    "login": "Login",
+    "signup": "Get started",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Theme": {
+    "label": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "Language": {
+    "label": "Change language"
+  },
+  "Footer": {
+    "description": "The fastest way to build and ship profitable micro SaaS tools.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "resources": "Resources",
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "tools": "Tools",
+      "changelog": "Changelog",
+      "about": "About",
+      "blog": "Blog",
+      "careers": "Careers",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "docs": "Documentation",
+      "support": "Support",
+      "status": "Status"
+    },
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js, Tailwind CSS & next-intl."
+  },
+  "Home": {
+    "badge": "New tools every week",
+    "headline": "Build & Launch Micro Tools in Hours",
+    "subtext": "A production-ready boilerplate packed with everything you need — auth, payments, i18n, dark mode and a growing library of client-side tools. Stop configuring, start shipping.",
+    "ctaPrimary": "Start building free",
+    "ctaSecondary": "Explore tools",
+    "trustedBy": "Trusted by indie hackers shipping fast",
+    "features": {
+      "title": "Everything you need to ship",
+      "subtitle": "Skip the boilerplate. Focus on the product that makes you money.",
+      "items": [
+        {
+          "icon": "zap",
+          "title": "Lightning fast setup",
+          "description": "Clone, install and run. A fully wired Next.js 14 App Router project with TypeScript and Tailwind, ready in minutes."
+        },
+        {
+          "icon": "globe",
+          "title": "Global by default",
+          "description": "Built-in internationalization with next-intl for English, Chinese and Spanish, plus automatic locale detection."
+        },
+        {
+          "icon": "shield",
+          "title": "Auth & payments ready",
+          "description": "Supabase authentication and Stripe checkout placeholders are pre-wired. Drop in your keys and go live."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Simple, transparent pricing",
+      "subtitle": "Start free. Upgrade when you grow. Cancel anytime.",
+      "viewAll": "View full pricing"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "Everything you need to know before getting started.",
+      "items": [
+        {
+          "question": "Do I need to know Next.js to use this?",
+          "answer": "Basic React knowledge helps, but the boilerplate is structured so you can copy a tool page, tweak the logic and ship. The folder layout is conventional and documented in the README."
+        },
+        {
+          "question": "Is authentication really included?",
+          "answer": "Yes — Supabase Auth is wired up with email/password and Google OAuth placeholders. Add your project URL and anon key in the environment file to activate it."
+        },
+        {
+          "question": "How do payments work?",
+          "answer": "Stripe Checkout is integrated as a placeholder. The pricing page calls a checkout function and there is a webhook route stub. Plug in your Stripe keys and price IDs to start charging."
+        },
+        {
+          "question": "Can I use this commercially?",
+          "answer": "Absolutely. This boilerplate is meant to be the foundation of your own product. Build, rebrand and sell whatever you create with it."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "Ready to launch your next micro SaaS?",
+      "subtitle": "Join builders shipping profitable tools without reinventing the wheel.",
+      "button": "Get started for free"
+    }
+  },
+  "Tools": {
+    "title": "Tools",
+    "subtitle": "A growing collection of fast, free, privacy-friendly tools that run entirely in your browser.",
+    "tryIt": "Try it",
+    "configure": "Configure",
+    "result": "Result",
+    "items": {
+      "imageCompressor": {
+        "name": "Image Compressor",
+        "short": "Shrink JPG & PNG images right in your browser."
+      },
+      "markdownPreview": {
+        "name": "Markdown Preview",
+        "short": "Write Markdown and see the rendered HTML instantly."
+      },
+      "colorConverter": {
+        "name": "Color Converter",
+        "short": "Convert colors between HEX, RGB and HSL in real time."
+      }
+    },
+    "imageCompressor": {
+      "title": "Image Compressor",
+      "description": "Compress JPG and PNG images locally using the Canvas API. Your files never leave your device.",
+      "dropHint": "Drop an image here or click to upload",
+      "quality": "Quality",
+      "original": "Original",
+      "compressed": "Compressed",
+      "saved": "Saved",
+      "preview": "Preview",
+      "noFile": "Upload an image to get started",
+      "downloadCompressed": "Download compressed image",
+      "reset": "Choose another image"
+    },
+    "markdownPreview": {
+      "title": "Markdown Preview",
+      "description": "Type Markdown on the left and see the rendered output on the right. Copy the generated HTML with one click.",
+      "inputLabel": "Markdown",
+      "previewLabel": "Preview",
+      "placeholder": "# Hello world\n\nStart typing **Markdown** here…",
+      "copyHtml": "Copy HTML",
+      "clear": "Clear"
+    },
+    "colorConverter": {
+      "title": "Color Converter",
+      "description": "Convert any color between HEX, RGB and HSL. Edit one field and the others update instantly.",
+      "hex": "HEX",
+      "rgb": "RGB",
+      "hsl": "HSL",
+      "preview": "Preview",
+      "invalid": "Invalid color value",
+      "pick": "Pick a color"
+    }
+  },
+  "Auth": {
+    "orContinueWith": "Or continue with",
+    "google": "Continue with Google",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "••••••••",
+    "confirmPasswordLabel": "Confirm password",
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Log in to your account to continue.",
+      "submit": "Log in",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign up",
+      "forgotPassword": "Forgot password?",
+      "success": "Logged in successfully. Redirecting…",
+      "error": "Invalid email or password."
+    },
+    "signup": {
+      "title": "Create your account",
+      "subtitle": "Start building in seconds. No credit card required.",
+      "submit": "Create account",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Log in",
+      "passwordMismatch": "Passwords do not match.",
+      "success": "Account created! Check your email to confirm.",
+      "error": "Could not create account. Please try again.",
+      "terms": "By signing up you agree to our Terms of Service and Privacy Policy."
+    }
+  },
+  "Pricing": {
+    "title": "Pricing that scales with you",
+    "subtitle": "Choose the plan that fits. Upgrade, downgrade or cancel at any time.",
+    "monthly": "/month",
+    "mostPopular": "Most popular",
+    "checkout": "Redirecting to secure checkout…",
+    "tiers": {
+      "starter": {
+        "name": "Starter",
+        "price": "$0",
+        "description": "For tinkerers exploring their first idea.",
+        "cta": "Start for free",
+        "features": [
+          "Access to all free tools",
+          "1 active project",
+          "Community support",
+          "MicroSaaS branding"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "$19",
+        "description": "For indie hackers shipping real products.",
+        "cta": "Subscribe to Pro",
+        "features": [
+          "Everything in Starter",
+          "Unlimited projects",
+          "Remove branding",
+          "Priority email support",
+          "Custom domains"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "price": "$49",
+        "description": "For teams and growing SaaS companies.",
+        "cta": "Subscribe to Business",
+        "features": [
+          "Everything in Pro",
+          "Team seats (up to 10)",
+          "Advanced analytics",
+          "SSO & audit logs",
+          "Dedicated support"
+        ]
+      }
+    },
+    "faqNote": "Prices in USD. Taxes may apply. All plans include a 14-day money-back guarantee."
+  },
+  "Metadata": {
+    "siteName": "MicroSaaS Boilerplate",
+    "defaultTitle": "MicroSaaS — Build & Launch Micro Tools in Hours",
+    "defaultDescription": "A production-ready Next.js boilerplate with auth, payments, i18n, dark mode and a library of client-side tools.",
+    "tools": {
+      "imageCompressor": "Compress JPG and PNG images instantly in your browser with adjustable quality. Free and private.",
+      "markdownPreview": "Write Markdown and preview the rendered HTML in real time. Copy the HTML output instantly.",
+      "colorConverter": "Convert colors between HEX, RGB and HSL formats in real time with live preview."
+    }
+  }
+}

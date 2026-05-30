@@ -1,0 +1,262 @@
+{
+  "Common": {
+    "appName": "MicroSaaS",
+    "tagline": "数小时内构建并发布微型工具。",
+    "copy": "复制",
+    "copied": "已复制！",
+    "copyHtml": "复制 HTML",
+    "download": "下载",
+    "upload": "上传",
+    "loading": "加载中…",
+    "getStarted": "开始使用",
+    "learnMore": "了解更多",
+    "comingSoon": "即将推出",
+    "backHome": "返回首页",
+    "notFoundTitle": "页面未找到",
+    "notFoundText": "抱歉，我们找不到你要访问的页面。"
+  },
+  "Nav": {
+    "home": "首页",
+    "tools": "工具",
+    "pricing": "定价",
+    "login": "登录",
+    "signup": "免费开始",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单"
+  },
+  "Theme": {
+    "label": "切换主题",
+    "light": "浅色",
+    "dark": "深色",
+    "system": "跟随系统"
+  },
+  "Language": {
+    "label": "切换语言"
+  },
+  "Footer": {
+    "description": "构建并发布盈利型微型 SaaS 工具的最快方式。",
+    "product": "产品",
+    "company": "公司",
+    "legal": "法律",
+    "resources": "资源",
+    "links": {
+      "features": "功能",
+      "pricing": "定价",
+      "tools": "工具",
+      "changelog": "更新日志",
+      "about": "关于我们",
+      "blog": "博客",
+      "careers": "招聘",
+      "contact": "联系我们",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "docs": "文档",
+      "support": "支持",
+      "status": "服务状态"
+    },
+    "rights": "保留所有权利。",
+    "builtWith": "由 Next.js、Tailwind CSS 与 next-intl 构建。"
+  },
+  "Home": {
+    "badge": "每周上新工具",
+    "headline": "数小时内构建并发布微型工具",
+    "subtext": "一个生产就绪的脚手架，包含你所需的一切——身份验证、支付、国际化、深色模式以及不断增长的客户端工具库。别再折腾配置，立刻开始发布。",
+    "ctaPrimary": "免费开始构建",
+    "ctaSecondary": "探索工具",
+    "trustedBy": "众多独立开发者正用它快速发布产品",
+    "features": {
+      "title": "发布所需的一切",
+      "subtitle": "跳过样板代码，专注于真正能赚钱的产品。",
+      "items": [
+        {
+          "icon": "zap",
+          "title": "闪电般的初始化",
+          "description": "克隆、安装、运行。一个完整接线的 Next.js 14 App Router 项目，配备 TypeScript 与 Tailwind，几分钟即可就绪。"
+        },
+        {
+          "icon": "globe",
+          "title": "天生面向全球",
+          "description": "内置基于 next-intl 的国际化，支持英文、中文与西班牙文，并自动检测语言区域。"
+        },
+        {
+          "icon": "shield",
+          "title": "身份验证与支付就绪",
+          "description": "已预先接入 Supabase 身份验证与 Stripe 结账占位逻辑。填入你的密钥即可上线。"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "简单透明的定价",
+      "subtitle": "免费起步，成长后再升级，随时可取消。",
+      "viewAll": "查看完整定价"
+    },
+    "faq": {
+      "title": "常见问题",
+      "subtitle": "开始之前你需要了解的一切。",
+      "items": [
+        {
+          "question": "使用它需要懂 Next.js 吗？",
+          "answer": "具备基础的 React 知识会有帮助，但该脚手架的结构让你只需复制一个工具页面、调整逻辑即可发布。目录结构遵循惯例并在 README 中有说明。"
+        },
+        {
+          "question": "真的内置了身份验证吗？",
+          "answer": "是的——Supabase Auth 已接入邮箱/密码与 Google OAuth 占位逻辑。在环境变量文件中填入项目 URL 与 anon key 即可启用。"
+        },
+        {
+          "question": "支付是如何运作的？",
+          "answer": "Stripe Checkout 已作为占位集成。定价页会调用结账函数，并提供一个 webhook 路由桩。填入你的 Stripe 密钥与价格 ID 即可开始收款。"
+        },
+        {
+          "question": "我可以将它用于商业用途吗？",
+          "answer": "当然可以。该脚手架旨在成为你自己产品的基础。你可以基于它进行构建、换标并销售。"
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "准备好发布你的下一个微型 SaaS 了吗？",
+      "subtitle": "加入那些无需重复造轮子即可发布盈利工具的开发者。",
+      "button": "免费开始"
+    }
+  },
+  "Tools": {
+    "title": "工具",
+    "subtitle": "一个不断增长的工具集合，快速、免费、注重隐私，完全在你的浏览器中运行。",
+    "tryIt": "试试看",
+    "configure": "配置",
+    "result": "结果",
+    "items": {
+      "imageCompressor": {
+        "name": "图片压缩器",
+        "short": "在浏览器中直接压缩 JPG 与 PNG 图片。"
+      },
+      "markdownPreview": {
+        "name": "Markdown 预览",
+        "short": "编写 Markdown，即时查看渲染后的 HTML。"
+      },
+      "colorConverter": {
+        "name": "颜色转换器",
+        "short": "在 HEX、RGB 与 HSL 之间实时转换颜色。"
+      }
+    },
+    "imageCompressor": {
+      "title": "图片压缩器",
+      "description": "使用 Canvas API 在本地压缩 JPG 与 PNG 图片。你的文件永远不会离开你的设备。",
+      "dropHint": "将图片拖到此处，或点击上传",
+      "quality": "质量",
+      "original": "原始",
+      "compressed": "压缩后",
+      "saved": "节省",
+      "preview": "预览",
+      "noFile": "上传一张图片以开始",
+      "downloadCompressed": "下载压缩后的图片",
+      "reset": "选择另一张图片"
+    },
+    "markdownPreview": {
+      "title": "Markdown 预览",
+      "description": "在左侧输入 Markdown，在右侧查看渲染输出。一键复制生成的 HTML。",
+      "inputLabel": "Markdown",
+      "previewLabel": "预览",
+      "placeholder": "# 你好，世界\n\n在此开始输入 **Markdown**…",
+      "copyHtml": "复制 HTML",
+      "clear": "清空"
+    },
+    "colorConverter": {
+      "title": "颜色转换器",
+      "description": "在 HEX、RGB 与 HSL 之间转换任意颜色。编辑其中一个字段，其它字段会即时更新。",
+      "hex": "HEX",
+      "rgb": "RGB",
+      "hsl": "HSL",
+      "preview": "预览",
+      "invalid": "无效的颜色值",
+      "pick": "选择颜色"
+    }
+  },
+  "Auth": {
+    "orContinueWith": "或使用以下方式继续",
+    "google": "使用 Google 继续",
+    "emailLabel": "邮箱",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "••••••••",
+    "confirmPasswordLabel": "确认密码",
+    "login": {
+      "title": "欢迎回来",
+      "subtitle": "登录你的账户以继续。",
+      "submit": "登录",
+      "noAccount": "还没有账户？",
+      "signupLink": "注册",
+      "forgotPassword": "忘记密码？",
+      "success": "登录成功，正在跳转…",
+      "error": "邮箱或密码无效。"
+    },
+    "signup": {
+      "title": "创建你的账户",
+      "subtitle": "几秒钟即可开始构建，无需信用卡。",
+      "submit": "创建账户",
+      "haveAccount": "已经有账户？",
+      "loginLink": "登录",
+      "passwordMismatch": "两次输入的密码不一致。",
+      "success": "账户已创建！请查收邮件以确认。",
+      "error": "无法创建账户，请重试。",
+      "terms": "注册即表示你同意我们的服务条款与隐私政策。"
+    }
+  },
+  "Pricing": {
+    "title": "随你成长的定价",
+    "subtitle": "选择适合你的方案。随时升级、降级或取消。",
+    "monthly": "/月",
+    "mostPopular": "最受欢迎",
+    "checkout": "正在跳转到安全结账…",
+    "tiers": {
+      "starter": {
+        "name": "入门版",
+        "price": "¥0",
+        "description": "面向探索第一个想法的折腾者。",
+        "cta": "免费开始",
+        "features": [
+          "使用所有免费工具",
+          "1 个进行中的项目",
+          "社区支持",
+          "MicroSaaS 品牌标识"
+        ]
+      },
+      "pro": {
+        "name": "专业版",
+        "price": "¥138",
+        "description": "面向发布真实产品的独立开发者。",
+        "cta": "订阅专业版",
+        "features": [
+          "包含入门版的全部功能",
+          "无限项目",
+          "去除品牌标识",
+          "优先邮件支持",
+          "自定义域名"
+        ]
+      },
+      "business": {
+        "name": "企业版",
+        "price": "¥348",
+        "description": "面向团队与成长中的 SaaS 公司。",
+        "cta": "订阅企业版",
+        "features": [
+          "包含专业版的全部功能",
+          "团队席位（最多 10 个）",
+          "高级分析",
+          "单点登录与审计日志",
+          "专属支持"
+        ]
+      }
+    },
+    "faqNote": "价格以美元计。可能需要缴税。所有方案均提供 14 天退款保证。"
+  },
+  "Metadata": {
+    "siteName": "MicroSaaS 脚手架",
+    "defaultTitle": "MicroSaaS — 数小时内构建并发布微型工具",
+    "defaultDescription": "一个生产就绪的 Next.js 脚手架，包含身份验证、支付、国际化、深色模式以及客户端工具库。",
+    "tools": {
+      "imageCompressor": "在浏览器中即时压缩 JPG 与 PNG 图片，质量可调。免费且私密。",
+      "markdownPreview": "编写 Markdown 并实时预览渲染后的 HTML，即时复制 HTML 输出。",
+      "colorConverter": "在 HEX、RGB 与 HSL 格式之间实时转换颜色，并实时预览。"
+    }
+  }
+}

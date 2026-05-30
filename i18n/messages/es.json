@@ -1,0 +1,262 @@
+{
+  "Common": {
+    "appName": "MicroSaaS",
+    "tagline": "Crea y lanza micro herramientas en horas.",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "copyHtml": "Copiar HTML",
+    "download": "Descargar",
+    "upload": "Subir",
+    "loading": "Cargando…",
+    "getStarted": "Comenzar",
+    "learnMore": "Saber más",
+    "comingSoon": "Próximamente",
+    "backHome": "Volver al inicio",
+    "notFoundTitle": "Página no encontrada",
+    "notFoundText": "Lo sentimos, no pudimos encontrar la página que buscas."
+  },
+  "Nav": {
+    "home": "Inicio",
+    "tools": "Herramientas",
+    "pricing": "Precios",
+    "login": "Iniciar sesión",
+    "signup": "Comenzar",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "Theme": {
+    "label": "Cambiar tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  },
+  "Language": {
+    "label": "Cambiar idioma"
+  },
+  "Footer": {
+    "description": "La forma más rápida de crear y lanzar micro herramientas SaaS rentables.",
+    "product": "Producto",
+    "company": "Empresa",
+    "legal": "Legal",
+    "resources": "Recursos",
+    "links": {
+      "features": "Funciones",
+      "pricing": "Precios",
+      "tools": "Herramientas",
+      "changelog": "Novedades",
+      "about": "Acerca de",
+      "blog": "Blog",
+      "careers": "Empleo",
+      "contact": "Contacto",
+      "privacy": "Política de privacidad",
+      "terms": "Términos del servicio",
+      "docs": "Documentación",
+      "support": "Soporte",
+      "status": "Estado"
+    },
+    "rights": "Todos los derechos reservados.",
+    "builtWith": "Creado con Next.js, Tailwind CSS y next-intl."
+  },
+  "Home": {
+    "badge": "Nuevas herramientas cada semana",
+    "headline": "Crea y lanza micro herramientas en horas",
+    "subtext": "Una plantilla lista para producción con todo lo que necesitas: autenticación, pagos, i18n, modo oscuro y una creciente biblioteca de herramientas del lado del cliente. Deja de configurar y empieza a publicar.",
+    "ctaPrimary": "Empieza gratis",
+    "ctaSecondary": "Explorar herramientas",
+    "trustedBy": "La eligen creadores independientes que lanzan rápido",
+    "features": {
+      "title": "Todo lo que necesitas para lanzar",
+      "subtitle": "Olvídate del código repetitivo. Concéntrate en el producto que te hace ganar dinero.",
+      "items": [
+        {
+          "icon": "zap",
+          "title": "Configuración ultrarrápida",
+          "description": "Clona, instala y ejecuta. Un proyecto Next.js 14 App Router totalmente conectado con TypeScript y Tailwind, listo en minutos."
+        },
+        {
+          "icon": "globe",
+          "title": "Global desde el primer día",
+          "description": "Internacionalización integrada con next-intl para inglés, chino y español, además de detección automática de idioma."
+        },
+        {
+          "icon": "shield",
+          "title": "Autenticación y pagos listos",
+          "description": "La autenticación de Supabase y el checkout de Stripe ya están conectados como plantillas. Añade tus claves y publica."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Precios simples y transparentes",
+      "subtitle": "Empieza gratis. Mejora cuando crezcas. Cancela cuando quieras.",
+      "viewAll": "Ver todos los precios"
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "subtitle": "Todo lo que necesitas saber antes de empezar.",
+      "items": [
+        {
+          "question": "¿Necesito saber Next.js para usar esto?",
+          "answer": "Conocer React básico ayuda, pero la plantilla está estructurada para que copies una página de herramienta, ajustes la lógica y publiques. La estructura de carpetas es convencional y está documentada en el README."
+        },
+        {
+          "question": "¿La autenticación viene incluida de verdad?",
+          "answer": "Sí — Supabase Auth está conectado con plantillas de correo/contraseña y Google OAuth. Añade la URL de tu proyecto y la anon key en el archivo de entorno para activarlo."
+        },
+        {
+          "question": "¿Cómo funcionan los pagos?",
+          "answer": "Stripe Checkout está integrado como plantilla. La página de precios llama a una función de checkout y hay un stub de ruta de webhook. Conecta tus claves de Stripe y los IDs de precio para empezar a cobrar."
+        },
+        {
+          "question": "¿Puedo usarlo comercialmente?",
+          "answer": "Por supuesto. Esta plantilla está pensada para ser la base de tu propio producto. Crea, personaliza la marca y vende lo que construyas con ella."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "¿Listo para lanzar tu próximo micro SaaS?",
+      "subtitle": "Únete a los creadores que lanzan herramientas rentables sin reinventar la rueda.",
+      "button": "Empieza gratis"
+    }
+  },
+  "Tools": {
+    "title": "Herramientas",
+    "subtitle": "Una colección creciente de herramientas rápidas, gratuitas y respetuosas con la privacidad que funcionan totalmente en tu navegador.",
+    "tryIt": "Probar",
+    "configure": "Configurar",
+    "result": "Resultado",
+    "items": {
+      "imageCompressor": {
+        "name": "Compresor de imágenes",
+        "short": "Reduce imágenes JPG y PNG directamente en tu navegador."
+      },
+      "markdownPreview": {
+        "name": "Vista previa de Markdown",
+        "short": "Escribe Markdown y ve el HTML renderizado al instante."
+      },
+      "colorConverter": {
+        "name": "Conversor de color",
+        "short": "Convierte colores entre HEX, RGB y HSL en tiempo real."
+      }
+    },
+    "imageCompressor": {
+      "title": "Compresor de imágenes",
+      "description": "Comprime imágenes JPG y PNG localmente con la API Canvas. Tus archivos nunca salen de tu dispositivo.",
+      "dropHint": "Arrastra una imagen aquí o haz clic para subir",
+      "quality": "Calidad",
+      "original": "Original",
+      "compressed": "Comprimida",
+      "saved": "Ahorrado",
+      "preview": "Vista previa",
+      "noFile": "Sube una imagen para empezar",
+      "downloadCompressed": "Descargar imagen comprimida",
+      "reset": "Elegir otra imagen"
+    },
+    "markdownPreview": {
+      "title": "Vista previa de Markdown",
+      "description": "Escribe Markdown a la izquierda y mira el resultado renderizado a la derecha. Copia el HTML generado con un clic.",
+      "inputLabel": "Markdown",
+      "previewLabel": "Vista previa",
+      "placeholder": "# Hola mundo\n\nEmpieza a escribir **Markdown** aquí…",
+      "copyHtml": "Copiar HTML",
+      "clear": "Borrar"
+    },
+    "colorConverter": {
+      "title": "Conversor de color",
+      "description": "Convierte cualquier color entre HEX, RGB y HSL. Edita un campo y los demás se actualizan al instante.",
+      "hex": "HEX",
+      "rgb": "RGB",
+      "hsl": "HSL",
+      "preview": "Vista previa",
+      "invalid": "Valor de color no válido",
+      "pick": "Elegir un color"
+    }
+  },
+  "Auth": {
+    "orContinueWith": "O continúa con",
+    "google": "Continuar con Google",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "passwordLabel": "Contraseña",
+    "passwordPlaceholder": "••••••••",
+    "confirmPasswordLabel": "Confirmar contraseña",
+    "login": {
+      "title": "Bienvenido de nuevo",
+      "subtitle": "Inicia sesión en tu cuenta para continuar.",
+      "submit": "Iniciar sesión",
+      "noAccount": "¿No tienes una cuenta?",
+      "signupLink": "Regístrate",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "success": "Sesión iniciada correctamente. Redirigiendo…",
+      "error": "Correo o contraseña no válidos."
+    },
+    "signup": {
+      "title": "Crea tu cuenta",
+      "subtitle": "Empieza a crear en segundos. No se requiere tarjeta de crédito.",
+      "submit": "Crear cuenta",
+      "haveAccount": "¿Ya tienes una cuenta?",
+      "loginLink": "Iniciar sesión",
+      "passwordMismatch": "Las contraseñas no coinciden.",
+      "success": "¡Cuenta creada! Revisa tu correo para confirmar.",
+      "error": "No se pudo crear la cuenta. Inténtalo de nuevo.",
+      "terms": "Al registrarte aceptas nuestros Términos del servicio y la Política de privacidad."
+    }
+  },
+  "Pricing": {
+    "title": "Precios que crecen contigo",
+    "subtitle": "Elige el plan que encaje. Mejora, reduce o cancela cuando quieras.",
+    "monthly": "/mes",
+    "mostPopular": "Más popular",
+    "checkout": "Redirigiendo al pago seguro…",
+    "tiers": {
+      "starter": {
+        "name": "Inicial",
+        "price": "$0",
+        "description": "Para curiosos que exploran su primera idea.",
+        "cta": "Empezar gratis",
+        "features": [
+          "Acceso a todas las herramientas gratuitas",
+          "1 proyecto activo",
+          "Soporte de la comunidad",
+          "Marca MicroSaaS"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "price": "$19",
+        "description": "Para creadores independientes que lanzan productos reales.",
+        "cta": "Suscribirse a Pro",
+        "features": [
+          "Todo lo del plan Inicial",
+          "Proyectos ilimitados",
+          "Eliminar la marca",
+          "Soporte prioritario por correo",
+          "Dominios personalizados"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "price": "$49",
+        "description": "Para equipos y empresas SaaS en crecimiento.",
+        "cta": "Suscribirse a Business",
+        "features": [
+          "Todo lo del plan Pro",
+          "Asientos de equipo (hasta 10)",
+          "Analíticas avanzadas",
+          "SSO y registros de auditoría",
+          "Soporte dedicado"
+        ]
+      }
+    },
+    "faqNote": "Precios en USD. Pueden aplicarse impuestos. Todos los planes incluyen garantía de devolución de 14 días."
+  },
+  "Metadata": {
+    "siteName": "Plantilla MicroSaaS",
+    "defaultTitle": "MicroSaaS — Crea y lanza micro herramientas en horas",
+    "defaultDescription": "Una plantilla Next.js lista para producción con autenticación, pagos, i18n, modo oscuro y una biblioteca de herramientas del lado del cliente.",
+    "tools": {
+      "imageCompressor": "Comprime imágenes JPG y PNG al instante en tu navegador con calidad ajustable. Gratis y privado.",
+      "markdownPreview": "Escribe Markdown y previsualiza el HTML renderizado en tiempo real. Copia el HTML al instante.",
+      "colorConverter": "Convierte colores entre los formatos HEX, RGB y HSL en tiempo real con vista previa en vivo."
+    }
+  }
+}
