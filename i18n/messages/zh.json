@@ -318,6 +318,68 @@
     "pro": "专业版",
     "business": "企业版"
   },
+  "Admin": {
+    "title": "管理后台",
+    "subtitle": "管理用户、订阅与实验。",
+    "nav": {
+      "overview": "概览",
+      "users": "用户",
+      "subscriptions": "订阅",
+      "experiments": "实验"
+    },
+    "forbidden": {
+      "title": "仅限管理员",
+      "message": "你没有权限查看此页面。"
+    },
+    "stats": {
+      "totalUsers": "用户总数",
+      "activeSubscriptions": "活跃订阅",
+      "mrr": "月度经常性收入",
+      "totalRevenue": "总收入（估算）",
+      "byPlan": "按方案统计活跃数"
+    },
+    "users": {
+      "title": "用户",
+      "searchPlaceholder": "按邮箱搜索…",
+      "email": "邮箱",
+      "role": "角色",
+      "plan": "方案",
+      "status": "状态",
+      "joined": "注册时间",
+      "actions": "操作",
+      "view": "查看",
+      "details": "用户详情",
+      "close": "关闭",
+      "empty": "未找到用户。",
+      "prev": "上一页",
+      "next": "下一页",
+      "page": "第",
+      "of": "页，共",
+      "loading": "正在加载用户…"
+    },
+    "subscriptions": {
+      "title": "订阅",
+      "filter": "状态",
+      "all": "全部",
+      "customer": "客户",
+      "plan": "方案",
+      "status": "状态",
+      "renews": "续费",
+      "created": "创建于",
+      "empty": "未找到订阅。"
+    },
+    "experiments": {
+      "title": "实验",
+      "subtitle": "所有实验的 A/B 测试结果。",
+      "experiment": "实验",
+      "variant": "变体",
+      "exposures": "曝光",
+      "conversions": "转化",
+      "rate": "转化率",
+      "empty": "暂无实验数据。",
+      "winner": "领先"
+    }
+  },
   "Metadata": {
     "siteName": "MicroSaaS 脚手架",
     "defaultTitle": "MicroSaaS — 数小时内构建并发布微型工具",

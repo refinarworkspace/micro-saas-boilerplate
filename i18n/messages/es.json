@@ -318,6 +318,68 @@
     "pro": "Pro",
     "business": "Business"
   },
+  "Admin": {
+    "title": "Administración",
+    "subtitle": "Gestiona usuarios, suscripciones y experimentos.",
+    "nav": {
+      "overview": "Resumen",
+      "users": "Usuarios",
+      "subscriptions": "Suscripciones",
+      "experiments": "Experimentos"
+    },
+    "forbidden": {
+      "title": "Solo administradores",
+      "message": "No tienes permiso para ver esta página."
+    },
+    "stats": {
+      "totalUsers": "Usuarios totales",
+      "activeSubscriptions": "Suscripciones activas",
+      "mrr": "MRR",
+      "totalRevenue": "Ingresos totales (est.)",
+      "byPlan": "Activas por plan"
+    },
+    "users": {
+      "title": "Usuarios",
+      "searchPlaceholder": "Buscar por correo…",
+      "email": "Correo",
+      "role": "Rol",
+      "plan": "Plan",
+      "status": "Estado",
+      "joined": "Registro",
+      "actions": "Acciones",
+      "view": "Ver",
+      "details": "Detalles del usuario",
+      "close": "Cerrar",
+      "empty": "No se encontraron usuarios.",
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "page": "Página",
+      "of": "de",
+      "loading": "Cargando usuarios…"
+    },
+    "subscriptions": {
+      "title": "Suscripciones",
+      "filter": "Estado",
+      "all": "Todas",
+      "customer": "Cliente",
+      "plan": "Plan",
+      "status": "Estado",
+      "renews": "Renueva",
+      "created": "Creada",
+      "empty": "No se encontraron suscripciones."
+    },
+    "experiments": {
+      "title": "Experimentos",
+      "subtitle": "Resultados de pruebas A/B de todos los experimentos.",
+      "experiment": "Experimento",
+      "variant": "Variante",
+      "exposures": "Exposiciones",
+      "conversions": "Conversiones",
+      "rate": "Tasa de conversión",
+      "empty": "Aún no hay datos de experimentos.",
+      "winner": "A la cabeza"
+    }
+  },
   "Metadata": {
     "siteName": "Plantilla MicroSaaS",
     "defaultTitle": "MicroSaaS — Crea y lanza micro herramientas en horas",

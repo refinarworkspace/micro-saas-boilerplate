@@ -318,6 +318,68 @@
     "pro": "Pro",
     "business": "Business"
   },
+  "Admin": {
+    "title": "Admin",
+    "subtitle": "Manage users, subscriptions and experiments.",
+    "nav": {
+      "overview": "Overview",
+      "users": "Users",
+      "subscriptions": "Subscriptions",
+      "experiments": "Experiments"
+    },
+    "forbidden": {
+      "title": "Admins only",
+      "message": "You don't have permission to view this page."
+    },
+    "stats": {
+      "totalUsers": "Total users",
+      "activeSubscriptions": "Active subscriptions",
+      "mrr": "MRR",
+      "totalRevenue": "Total revenue (est.)",
+      "byPlan": "Active by plan"
+    },
+    "users": {
+      "title": "Users",
+      "searchPlaceholder": "Search by email…",
+      "email": "Email",
+      "role": "Role",
+      "plan": "Plan",
+      "status": "Status",
+      "joined": "Joined",
+      "actions": "Actions",
+      "view": "View",
+      "details": "User details",
+      "close": "Close",
+      "empty": "No users found.",
+      "prev": "Previous",
+      "next": "Next",
+      "page": "Page",
+      "of": "of",
+      "loading": "Loading users…"
+    },
+    "subscriptions": {
+      "title": "Subscriptions",
+      "filter": "Status",
+      "all": "All",
+      "customer": "Customer",
+      "plan": "Plan",
+      "status": "Status",
+      "renews": "Renews",
+      "created": "Created",
+      "empty": "No subscriptions found."
+    },
+    "experiments": {
+      "title": "Experiments",
+      "subtitle": "A/B test results across all experiments.",
+      "experiment": "Experiment",
+      "variant": "Variant",
+      "exposures": "Exposures",
+      "conversions": "Conversions",
+      "rate": "Conversion rate",
+      "empty": "No experiment data yet.",
+      "winner": "Leading"
+    }
+  },
   "Metadata": {
     "siteName": "MicroSaaS Boilerplate",
     "defaultTitle": "MicroSaaS — Build & Launch Micro Tools in Hours",
