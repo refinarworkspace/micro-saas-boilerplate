@@ -207,6 +207,9 @@
     "monthly": "/mes",
     "mostPopular": "Más popular",
     "checkout": "Redirigiendo al pago seguro…",
+    "currentPlan": "Plan actual",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "canceled": "Pago cancelado: no se realizó ningún cargo.",
     "tiers": {
       "starter": {
         "name": "Inicial",

@@ -207,6 +207,9 @@
     "monthly": "/month",
     "mostPopular": "Most popular",
     "checkout": "Redirecting to secure checkout…",
+    "currentPlan": "Current plan",
+    "error": "Something went wrong. Please try again.",
+    "canceled": "Checkout canceled — no charge was made.",
     "tiers": {
       "starter": {
         "name": "Starter",

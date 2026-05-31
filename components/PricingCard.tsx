@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Check } from 'lucide-react';
+import { Check, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -29,9 +29,24 @@ interface PricingCardProps {
   tier: PricingTier;
   onSelect?: (id: string) => void;
   loading?: boolean;
+  /** The plan id the signed-in user is currently on (if any). */
+  currentPlan?: string | null;
+  /** Localized label for the "current plan" state. */
+  currentLabel?: string;
+  /** Error message to show under the button (for the acted-on card). */
+  error?: string | null;
 }
 
-export function PricingCard({ tier, onSelect, loading }: PricingCardProps) {
+export function PricingCard({
+  tier,
+  onSelect,
+  loading,
+  currentPlan,
+  currentLabel = 'Current plan',
+  error,
+}: PricingCardProps) {
+  const isCurrent = currentPlan != null && currentPlan === tier.id;
+
   return (
     <Card
       className={cn(
@@ -50,9 +65,7 @@ export function PricingCard({ tier, onSelect, loading }: PricingCardProps) {
         <CardTitle className="text-lg">{tier.name}</CardTitle>
         <CardDescription>{tier.description}</CardDescription>
         <div className="mt-4 flex items-end gap-1">
-          <span className="text-4xl font-bold tracking-tight">
-            {tier.price}
-          </span>
+          <span className="text-4xl font-bold tracking-tight">{tier.price}</span>
           <span className="mb-1 text-sm text-muted-foreground">
             {tier.period}
           </span>
@@ -70,15 +83,24 @@ export function PricingCard({ tier, onSelect, loading }: PricingCardProps) {
         </ul>
       </CardContent>
 
-      <CardFooter>
+      <CardFooter className="flex-col items-stretch gap-2">
         <Button
           className="w-full"
-          variant={tier.highlighted ? 'default' : 'outline'}
-          disabled={loading}
+          variant={
+            isCurrent ? 'secondary' : tier.highlighted ? 'default' : 'outline'
+          }
+          disabled={loading || isCurrent}
+          aria-busy={loading}
           onClick={() => onSelect?.(tier.id)}
         >
-          {tier.cta}
+          {loading && <Loader2 className="h-4 w-4 animate-spin" />}
+          {isCurrent ? currentLabel : tier.cta}
         </Button>
+        {error && (
+          <p className="text-center text-xs text-destructive" role="alert">
+            {error}
+          </p>
+        )}
       </CardFooter>
     </Card>
   );

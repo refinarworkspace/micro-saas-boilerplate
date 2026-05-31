@@ -207,6 +207,9 @@
     "monthly": "/月",
     "mostPopular": "最受欢迎",
     "checkout": "正在跳转到安全结账…",
+    "currentPlan": "当前方案",
+    "error": "出了点问题，请重试。",
+    "canceled": "结账已取消——未产生任何费用。",
     "tiers": {
       "starter": {
         "name": "入门版",

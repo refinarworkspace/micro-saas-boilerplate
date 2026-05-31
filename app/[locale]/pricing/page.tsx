@@ -18,8 +18,13 @@ export async function generateMetadata({
   });
 }
 
-export default function PricingPage() {
+export default function PricingPage({
+  searchParams,
+}: {
+  searchParams: { checkout?: string };
+}) {
   const t = useTranslations('Pricing');
+  const canceled = searchParams?.checkout === 'cancel';
 
   return (
     <div className="container py-14 lg:py-20">
@@ -28,10 +33,18 @@ export default function PricingPage() {
           {t('title')}
         </h1>
         <p className="mt-3 text-muted-foreground">{t('subtitle')}</p>
+        {canceled && (
+          <p
+            className="mx-auto mt-6 max-w-md rounded-md bg-muted px-4 py-2 text-sm text-muted-foreground"
+            role="status"
+          >
+            {t('canceled')}
+          </p>
+        )}
       </div>
 
       <div className="mx-auto mt-12 max-w-5xl">
-        {/* withCheckout enables the (placeholder) Stripe checkout flow. */}
+        {/* Real Stripe Checkout flow (demo-safe). */}
         <PricingSection withCheckout />
       </div>
 
