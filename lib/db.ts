@@ -387,3 +387,46 @@ export async function getAbResults(): Promise<AbResultRow[]> {
     };
   });
 }
+
+
+/* -------------------------------------------------------------------------- */
+/* Tool usage (dashboard stats)                                               */
+/* -------------------------------------------------------------------------- */
+
+export interface UsageSummary {
+  totalToolsUsed: number;
+  recent: { tool: string; created_at: string }[];
+}
+
+export async function getUsageSummary(userId: string): Promise<UsageSummary> {
+  const admin = getAdminClient();
+  if (!admin) {
+    return {
+      totalToolsUsed: 128,
+      recent: [
+        { tool: 'image-compressor', created_at: '2026-05-30T09:12:00Z' },
+        { tool: 'color-converter', created_at: '2026-05-29T18:40:00Z' },
+        { tool: 'markdown-preview', created_at: '2026-05-28T11:05:00Z' },
+        { tool: 'image-compressor', created_at: '2026-05-27T15:22:00Z' },
+      ],
+    };
+  }
+
+  const [{ count }, { data }] = await Promise.all([
+    admin
+      .from('tool_usage')
+      .select('id', { count: 'exact', head: true })
+      .eq('user_id', userId),
+    admin
+      .from('tool_usage')
+      .select('tool, created_at')
+      .eq('user_id', userId)
+      .order('created_at', { ascending: false })
+      .limit(5),
+  ]);
+
+  return {
+    totalToolsUsed: count ?? 0,
+    recent: (data as { tool: string; created_at: string }[]) ?? [],
+  };
+}

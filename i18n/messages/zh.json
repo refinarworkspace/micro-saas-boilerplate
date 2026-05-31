@@ -21,6 +21,7 @@
     "pricing": "定价",
     "login": "登录",
     "signup": "免费开始",
+    "dashboard": "仪表盘",
     "openMenu": "打开菜单",
     "closeMenu": "关闭菜单"
   },
@@ -251,6 +252,71 @@
       }
     },
     "faqNote": "价格以美元计。可能需要缴税。所有方案均提供 14 天退款保证。"
+  },
+  "Dashboard": {
+    "title": "仪表盘",
+    "nav": {
+      "overview": "概览",
+      "billing": "账单",
+      "apiKeys": "API 密钥",
+      "settings": "设置"
+    },
+    "greeting": "欢迎回来",
+    "accountInfo": "账户",
+    "email": "邮箱",
+    "role": "角色",
+    "memberSince": "注册于",
+    "stats": {
+      "toolsUsed": "已使用工具",
+      "toolsUsedHint": "所有工具合计",
+      "subscription": "订阅",
+      "daysRemaining": "剩余天数",
+      "daysRemainingHint": "距续费"
+    },
+    "recentUsage": "最近的工具使用",
+    "noUsage": "还没有工具使用记录。试试某个工具吧！",
+    "apiKeys": {
+      "title": "API 密钥",
+      "description": "对工具的编程访问即将推出。",
+      "comingSoon": "即将推出",
+      "placeholder": "sk_live_••••••••••••••••",
+      "generate": "生成密钥"
+    },
+    "settings": {
+      "title": "设置",
+      "description": "管理你的账户偏好。",
+      "comingSoon": "设置管理即将推出。"
+    },
+    "upgrade": "升级方案",
+    "manageBilling": "管理账单",
+    "demoBanner": "你正在查看演示数据。配置 Supabase 以查看你的真实账户。"
+  },
+  "Account": {
+    "title": "账单与账户",
+    "subtitle": "管理你的订阅与账单信息。",
+    "currentPlan": "当前方案",
+    "status": "状态",
+    "renewsOn": "续费日期",
+    "manageBilling": "管理账单",
+    "noSubscription": "你正在使用免费方案。",
+    "viewPlans": "查看方案",
+    "checkoutSuccess": "订阅已激活，欢迎加入！",
+    "backToDashboard": "返回仪表盘"
+  },
+  "PlanStatus": {
+    "active": "有效",
+    "trialing": "试用中",
+    "past_due": "逾期",
+    "canceled": "已取消",
+    "incomplete": "未完成",
+    "none": "无订阅",
+    "free": "免费"
+  },
+  "Plans": {
+    "free": "免费版",
+    "starter": "入门版",
+    "pro": "专业版",
+    "business": "企业版"
   },
   "Metadata": {
     "siteName": "MicroSaaS 脚手架",

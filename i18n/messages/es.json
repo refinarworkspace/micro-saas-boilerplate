@@ -21,6 +21,7 @@
     "pricing": "Precios",
     "login": "Iniciar sesión",
     "signup": "Comenzar",
+    "dashboard": "Panel",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú"
   },
@@ -251,6 +252,71 @@
       }
     },
     "faqNote": "Precios en USD. Pueden aplicarse impuestos. Todos los planes incluyen garantía de devolución de 14 días."
+  },
+  "Dashboard": {
+    "title": "Panel",
+    "nav": {
+      "overview": "Resumen",
+      "billing": "Facturación",
+      "apiKeys": "Claves API",
+      "settings": "Ajustes"
+    },
+    "greeting": "Bienvenido de nuevo",
+    "accountInfo": "Cuenta",
+    "email": "Correo electrónico",
+    "role": "Rol",
+    "memberSince": "Miembro desde",
+    "stats": {
+      "toolsUsed": "Herramientas usadas",
+      "toolsUsedHint": "En todas las herramientas",
+      "subscription": "Suscripción",
+      "daysRemaining": "Días restantes",
+      "daysRemainingHint": "Hasta la renovación"
+    },
+    "recentUsage": "Uso reciente de herramientas",
+    "noUsage": "Aún no hay uso de herramientas. ¡Prueba alguna!",
+    "apiKeys": {
+      "title": "Claves API",
+      "description": "El acceso programático a tus herramientas llegará pronto.",
+      "comingSoon": "Próximamente",
+      "placeholder": "sk_live_••••••••••••••••",
+      "generate": "Generar clave"
+    },
+    "settings": {
+      "title": "Ajustes",
+      "description": "Administra las preferencias de tu cuenta.",
+      "comingSoon": "La gestión de ajustes llegará pronto."
+    },
+    "upgrade": "Mejorar plan",
+    "manageBilling": "Gestionar facturación",
+    "demoBanner": "Estás viendo datos de demostración. Configura Supabase para ver tu cuenta real."
+  },
+  "Account": {
+    "title": "Facturación y cuenta",
+    "subtitle": "Administra tu suscripción y datos de facturación.",
+    "currentPlan": "Plan actual",
+    "status": "Estado",
+    "renewsOn": "Se renueva el",
+    "manageBilling": "Gestionar facturación",
+    "noSubscription": "Estás en el plan gratuito.",
+    "viewPlans": "Ver planes",
+    "checkoutSuccess": "Suscripción activada. ¡Bienvenido!",
+    "backToDashboard": "Volver al panel"
+  },
+  "PlanStatus": {
+    "active": "Activa",
+    "trialing": "Prueba",
+    "past_due": "Vencida",
+    "canceled": "Cancelada",
+    "incomplete": "Incompleta",
+    "none": "Sin suscripción",
+    "free": "Gratis"
+  },
+  "Plans": {
+    "free": "Gratis",
+    "starter": "Inicial",
+    "pro": "Pro",
+    "business": "Business"
   },
   "Metadata": {
     "siteName": "Plantilla MicroSaaS",

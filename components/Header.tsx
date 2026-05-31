@@ -19,6 +19,7 @@ export function Header() {
     { href: '/', label: t('home') },
     { href: '/tools', label: t('tools') },
     { href: '/pricing', label: t('pricing') },
+    { href: '/dashboard', label: t('dashboard') },
   ];
 
   // Close the mobile menu whenever the route changes.

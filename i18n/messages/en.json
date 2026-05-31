@@ -21,6 +21,7 @@
     "pricing": "Pricing",
     "login": "Login",
     "signup": "Get started",
+    "dashboard": "Dashboard",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -251,6 +252,71 @@
       }
     },
     "faqNote": "Prices in USD. Taxes may apply. All plans include a 14-day money-back guarantee."
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "nav": {
+      "overview": "Overview",
+      "billing": "Billing",
+      "apiKeys": "API Keys",
+      "settings": "Settings"
+    },
+    "greeting": "Welcome back",
+    "accountInfo": "Account",
+    "email": "Email",
+    "role": "Role",
+    "memberSince": "Member since",
+    "stats": {
+      "toolsUsed": "Tools used",
+      "toolsUsedHint": "Across all tools",
+      "subscription": "Subscription",
+      "daysRemaining": "Days remaining",
+      "daysRemainingHint": "Until renewal"
+    },
+    "recentUsage": "Recent tool usage",
+    "noUsage": "No tool usage yet. Try one of the tools!",
+    "apiKeys": {
+      "title": "API Keys",
+      "description": "Programmatic access to your tools is coming soon.",
+      "comingSoon": "Coming soon",
+      "placeholder": "sk_live_••••••••••••••••",
+      "generate": "Generate key"
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Manage your account preferences.",
+      "comingSoon": "Settings management is coming soon."
+    },
+    "upgrade": "Upgrade plan",
+    "manageBilling": "Manage billing",
+    "demoBanner": "You're viewing demo data. Configure Supabase to see your real account."
+  },
+  "Account": {
+    "title": "Billing & Account",
+    "subtitle": "Manage your subscription and billing details.",
+    "currentPlan": "Current plan",
+    "status": "Status",
+    "renewsOn": "Renews on",
+    "manageBilling": "Manage billing",
+    "noSubscription": "You're on the free plan.",
+    "viewPlans": "View plans",
+    "checkoutSuccess": "Subscription activated. Welcome aboard!",
+    "backToDashboard": "Back to dashboard"
+  },
+  "PlanStatus": {
+    "active": "Active",
+    "trialing": "Trialing",
+    "past_due": "Past due",
+    "canceled": "Canceled",
+    "incomplete": "Incomplete",
+    "none": "No subscription",
+    "free": "Free"
+  },
+  "Plans": {
+    "free": "Free",
+    "starter": "Starter",
+    "pro": "Pro",
+    "business": "Business"
   },
   "Metadata": {
     "siteName": "MicroSaaS Boilerplate",
