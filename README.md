@@ -215,6 +215,12 @@ Deploy to [Vercel](https://vercel.com): import the repo, add the environment
 variables, run the SQL schema in Supabase, set the Stripe webhook endpoint, and
 deploy. `npm run build` produces the production build.
 
+## Contributing and security
+
+Contributions are welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, development, and pull request guidelines.
+
+If you discover a security issue, please do **not** open a public issue. Follow the private reporting process in [SECURITY.md](./SECURITY.md).
+
 ## License
 
-MIT — build, rebrand and sell whatever you create with it.
+MIT — build, rebrand and sell whatever you create with it. See [LICENSE](./LICENSE).
