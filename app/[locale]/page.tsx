@@ -70,28 +70,33 @@ export default function HomePage() {
       {/* ----------------------------------------------------------------- */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-grid [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
-        <div className="container flex flex-col items-center py-20 text-center lg:py-28">
-          <span className="inline-flex items-center gap-2 rounded-full border bg-background/60 px-4 py-1.5 text-sm font-medium text-muted-foreground shadow-sm backdrop-blur">
-            <Sparkles className="h-4 w-4 text-primary" />
+        <div className="container flex flex-col items-center px-4 py-14 text-center sm:px-6 sm:py-20 lg:py-28">
+          <span className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border bg-background/60 px-3 py-1.5 text-center text-sm font-medium text-muted-foreground shadow-sm backdrop-blur sm:px-4">
+            <Sparkles className="h-4 w-4 shrink-0 text-primary" />
             {t('badge')}
           </span>
 
-          <h1 className="mt-6 max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 w-full max-w-4xl break-words text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             {t('headline')}
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
+          <p className="mt-6 w-full max-w-2xl text-base text-muted-foreground sm:text-lg">
             {t('subtext')}
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg" asChild>
+          <div className="mt-8 flex w-full max-w-sm flex-col gap-3 sm:mt-9 sm:w-auto sm:max-w-none sm:flex-row">
+            <Button size="lg" className="w-full sm:w-auto" asChild>
               <Link href="/auth/signup">
                 {t('ctaPrimary')}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button
+              size="lg"
+              variant="outline"
+              className="w-full sm:w-auto"
+              asChild
+            >
               <Link href="/tools">{t('ctaSecondary')}</Link>
             </Button>
           </div>
