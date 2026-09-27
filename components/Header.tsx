@@ -29,16 +29,16 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur-lg">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-16 items-center justify-between gap-2 px-4 sm:px-6">
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-bold tracking-tight"
+          className="flex min-w-0 items-center gap-2 font-bold tracking-tight"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Rocket className="h-4 w-4" />
           </span>
-          <span className="text-lg">{tc('appName')}</span>
+          <span className="min-w-0 truncate text-base sm:text-lg">{tc('appName')}</span>
         </Link>
 
         {/* Desktop nav */}
@@ -64,7 +64,7 @@ export function Header() {
         </nav>
 
         {/* Right side actions */}
-        <div className="flex items-center gap-1">
+        <div className="flex shrink-0 items-center gap-1">
           <LanguageSwitcher />
           <ThemeToggle />
           <div className="hidden items-center gap-2 md:flex">
